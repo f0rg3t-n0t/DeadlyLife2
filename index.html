@@ -309,17 +309,15 @@
   
   <!-- 스타팅 포인트 -->  
   <div id="starting-point" class="hidden">
-    <p><span style="font-weight: bold;">[건물 입구]</span><br><br>흰 관을 연상시키는 건물. 그 입구에 다다른다.<br>돌로 된 정문 표면에는 알 수 없는 문자가 빼곡히 음각으로 새겨져 있다. 무엇을 기록한 것인지는 알 수 없으나, 음산하고 기분 나쁜 분위기가 풍긴다.<br>이 입구를 기점 삼아 건물 안으로 들어가거나, 섬의 시설물을 둘러보고 돌아올 수 있을 것 같다.</p>
+    <p><span style="font-weight: bold;">[건물 입구]</span><br><br>흰 관을 연상시키는 건물. 그 입구에 다다른다.<br>돌로 된 정문 표면에는 알 수 없는 문자가 빼곡히 음각으로 새겨져 있다. 무엇을 기록한 것인지는 알 수 없으나, 음산하고 기분 나쁜 분위기가 풍긴다.<br>이번 사건은 실내에서 벌어졌으니 바깥으로 나갈 필요까지는 없겠지...</p>
     <button onclick="goTo('inside')">건물 안으로 들어간다</button>
-    <button onclick="goTo('outside')">건물 밖으로 나간다</button>
   </div>
 
   <!-- 내부 1층 --> 
   <div id="inside" class="hidden">
-    <p><span style="font-weight: bold;">[건물 1층]</span><br><br>건물 1층.<br>정면에 방문객을 맞이하는 <span style="color: #202e70;">로비</span>가 보이고, 로비 뒤편에는 뒤편에는 유리로 된 <span style="color: #202e70;">엘리베이터</span>가 배치되어 있다.<br>더 안쪽에 있는 복도는 <span style="color: #202e70;">레스토랑</span>으로 이어지는 듯하다.</p>
+    <p><span style="font-weight: bold;">[건물 1층]</span><br><br>건물 1층.<br>정면에 방문객을 맞이하는 <span style="color: #202e70;">로비</span>가 보이고, 로비 뒤편에는 유리로 된 <span style="color: #202e70;">엘리베이터</span>가 배치되어 있다.</p>
     <button onclick="goTo('lobby')">로비</button>
     <button onclick="goTo('elevator')">엘리베이터</button>
-    <button onclick="goTo('restaurant')">레스토랑</button><br>
     <button class="nav-button" onclick="goTo('starting-point')">건물 입구로 돌아가기</button>
   </div>
 
@@ -333,16 +331,18 @@
 
     <!-- 로비:카운터 --> 
     <div id="counter" class="hidden">
-    <p><span style="font-weight: bold;">[로비]<br>[카운터]</span><br><br>보통이라면 직원이 서 있어야 할 카운터 너머에는 아무도 없다.<br>조명이 몇 개 꺼져 어둑하고, 공증인의 목소리조차 들리지 않는다.<br>혼자만의 힘으로 조사해 보라는 뜻일까...</p>
+    <p><span style="font-weight: bold;">[로비]<br>[카운터]</span><br><br>보통이라면 직원이 서 있어야 할 카운터 너머에는 아무도 없다.<br>조명이 몇 개 꺼져 어둑하고, 공증인의 목소리조차 들리지 않는다.<br>이번 사건을 조사하고 나면, 또 이 아래에 있는 재판정으로...</p>
     <button class="nav-button" onclick="goTo('lobby')">나가기</button>
  </div>
 
     <!-- 로비:라운지 --> 
     <div id="waitingspace" class="hidden">
-    <p><span style="font-weight: bold;">[로비]<br>[라운지]</span><br><br>카운터 앞쪽에 배치된 라운지. 잠시 쉬어가는 용도의 소파가 배치되어 있지만 지금은 적당한 때가 아니다.<br>라운지 양쪽으로는 큰 유리창이 나 있어 섬의 풍경이 한눈에 들어온다.<br>사방을 둘러싼 바다는 우리가 더는 이 섬에서 나갈 수 없다는 사실을 상기시킨다.<br>라운지 중앙에는 작은 <span style="color: #202e70;">책꽂이</span>가 설치되어 있다. </p>
+    <p><span style="font-weight: bold;">[로비]<br>[라운지]</span><br><br>카운터 앞쪽에 배치된 라운지. 잠시 쉬어가는 용도의 소파가 배치되어 있지만 지금은 적당한 때가 아니다.<br>라운지 중앙에는 작은 <span style="color: #202e70;">책꽂이</span>가 설치되어 있다.<br>대리석 <span style="color: #202e70;">바닥</span> 위를 걷는 소리가 음산하게 울린다...</p>
     <button onclick="goTo('bookshelf')">책꽂이</button><br>
+    <button onclick="goTo('floor')">바닥</button><br>
     <button class="nav-button" onclick="goTo('lobby')">나가기</button>
  </div>
+  
     <!-- 로비:라운지:책꽂이 --> 
     <div id="bookshelf" class="hidden">
     <p><span style="font-weight: bold;">[로비]/[라운지]<br>[책꽂이]</span><br><br>
@@ -363,12 +363,54 @@
       <!-- 로비:라운지:책2 --> 
     <div id="book2" class="hidden">
     <p><span style="font-weight: bold;">[로비]/[라운지]<br>[책꽂이]</span><br><br>
-    푸른색 표지의 책. 새로 인쇄했는지 종이가 빳빳하다.<br><br>초세계급으로 선발된 인원들에 대한 소개 중에서 에르네스토의 이야기도 찾을 수 있다.<br><br>
-    1991년 출생.<br>2005년 재해로 인해 실향.<br>2021년 지질학 박사 학위 취득.<br>2022년 초세계급 재해과학자로 임명.<br><span style="font-weight: bold;">2025년 사망.</span>
+    푸른색 표지의 책. 새로 인쇄했는지 종이가 빳빳하다.<br><br>초세계급으로 선발된 인원들에 대한 소개 중에서 폴라리스의 이야기도 찾을 수 있다.<br><br>
+    1993년 출생.<br>2005년 내용 <br>2021년 내용 <br>2022년 초세계급 프론트맨으로 임명.<br><span style="font-weight: bold;">2025년 사망.</span>
 </p>
     <button class="nav-button" onclick="goTo('bookshelf')">나가기</button>
  </div>
 
+      <!-- 로비:라운지 --> 
+    <div id="floor" class="hidden">
+    <p><span style="font-weight: bold;">[로비]/[라운지]<br>[바닥]</span><br><br>
+    라운지를 걷다 보면 무언가 발에 채인다.<br>찢어진 종이 쓰레기 같다. 왜 바닥에 버려 둔 걸까...<br>조각난 채로 버려져 있어 내용은 알아보기 힘들다.</p>
+    <button onclick="goTo('evi13')">종이를 맞춰 본다</button><br>
+    <button class="nav-button" onclick="goTo('lobby')">나가기</button>
+ </div>
+
+    <!-- 로비:라운지 --> 
+    <div id="floor" class="hidden">
+    <p><span style="font-weight: bold;">[로비]/[라운지]<br>[바닥]</span><br><br>
+    라운지를 걷다 보면 무언가 발에 채인다.<br>찢어진 종이 쓰레기 같다. 왜 바닥에 버려 둔 걸까...<br>조각난 채로 버려져 있어 내용은 알아보기 힘들다.</p>
+    <button onclick="goTo('evi13')">종이를 맞춰 본다</button><br>
+    <button class="nav-button" onclick="goTo('waitingspace')">나가기</button>
+ </div>
+
+    <!-- 로비:라운지 --> 
+    <div id="evi13" class="hidden">
+    <p><span style="font-weight: bold;">[로비]/[라운지]<br>[바닥]</span><br><br>
+    어떻게든 맞춰 보면 일종의 쪽지처럼 보이기도 하는데...<br>알아보기 힘든 글자로 「…비밀… …공연장… 1시 30분…」 같은 단어가 쓰여 있다.</p>
+    <button id="gubtn" onclick="ev14('gubtn')">자세히 살펴본다</button><br>
+    <button id="gub15tn" onclick="ev15('gub15tn')">필체에 대해 생각해 본다</button><br>
+    <p id="evi14-result"></p>
+    <p id="evi15-result"></p>
+    <button class="nav-button" onclick="goTo('waitingspace')">나가기</button>
+ </div>
+
+      <!-- 로비:라운지 --> 
+    <div id="evi14" class="hidden">
+    <p><span style="font-weight: bold;">[로비]/[라운지]<br>[바닥]</span><br><br>
+     「…리스 …비」 라는 글자까지는 맞춰 볼 수 있을 것 같다.</p>
+    <button class="nav-button" onclick="goTo('evi13')">나가기</button>
+ </div>
+
+      <!-- 로비:라운지 --> 
+    <div id="evi15" class="hidden">
+    <p><span style="font-weight: bold;">[로비]/[라운지]<br>[바닥]</span><br><br>
+     일부러 평소에 쓰지 않는 손으로 작성하여 작성자가 특정되는 것을 피하려고 한 것으로 보인다.</p>
+    <button class="nav-button" onclick="goTo('evi13')">나가기</button>
+ </div>
+
+  
     <!-- 로비:엘리베이터 --> 
     <div id="elevator" class="hidden">
     <p><span style="font-weight: bold;">[엘리베이터]</span><br><br>유리로 되어 있어 내부가 전부 들여다보이는 엘리베이터.<br>이 건물은 엘리베이터 주변의 공간이 뻥 뚫린 구조로 설계되어 있다.<br>몇 층까지 있는지, 어떤 위험한 시설이 존재하는지조차 우리는 모른다...</p>
@@ -382,13 +424,7 @@
     <button onclick="goToWithSound('inside','zzapelevator.mp3')">1층</button><br>
     <button onclick="goToWithSound('2ndfloor','zzapelevator.mp3')">2층</button><br>
  </div>     
-  
-    <!-- 레스토랑 --> 
-    <div id="restaurant" class="hidden">
-    <p><span style="font-weight: bold;">[레스토랑]</span><br><br>평소 즐거운 대화 소리가 오가던 레스토랑은 쥐 죽은 듯이 조용하다.
-    </p>
-      <button class="nav-button" onclick="goTo('inside')">나가기</button>
-  </div>
+
 
     <!-- 2층 --> 
     <div id="2ndfloor" class="hidden">
@@ -465,15 +501,14 @@
   
       <!-- 비품실 : 도구함 --> 
     <div id="evi14" class="hidden">
-    <p><span style="font-weight: bold;">[내빈용 객실]/[비품실]</span><br><br>도구함의 뚜껑을 들어올리면, 그 안에는 톱, 전동 가위, 도끼 같은 물건들이 가지런히 들어 있다.<br><br>무언가 사라진 것 같지는 않다. 아무도 건드리지 않은 모양이다.</p>
+    <p><span style="font-weight: bold;">[내빈용 객실]/[비품실]</span><br><br>도구함의 뚜껑을 들어올리면, 그 안에는 톱, 전동 가위, 도끼 같은 물건들이 가지런히 들어 있다.<br><br>무언가 사라진 것 같지는 않다. 아무도 건드리지 않은 모양이다. 그렇다면 렌치는 어디서 가져온 걸까...</p>
     <button class="nav-button" onclick="goTo('bipum')">나가기</button>
   </div>
   
     <!-- 회의실 --> 
     <div id="office" class="hidden">
-    <p><span style="font-weight: bold;">[회의실]</span><br><br>세미나 등을 진행할 수 있는 회의실. 사무실의 역할도 겸하고 있다. <span style="color: #202e70;">사무용 책상</span>과 그 위의 <span style="color: #202e70;">컴퓨터</span>가 눈에 띈다.</p>
+    <p><span style="font-weight: bold;">[회의실]</span><br><br>세미나 등을 진행할 수 있는 회의실. 사무실의 역할도 겸하고 있다. 사무용 책상과 그 위의 <span style="color: #202e70;">컴퓨터</span>가 눈에 띈다.</p>
     <button onclick="goTo('pcdesk')">사무용 책상</button>
-    <button onclick="goTo('computer')">컴퓨터</button><br>   
     <button class="nav-button" onclick="goTo('2ndfloor')">나가기</button>
   </div>
 
@@ -486,13 +521,7 @@
   
       <!-- 회의실 : 사무용 책상 : 서랍--> 
     <div id="pcdesk1" class="hidden">
-    <p><span style="font-weight: bold;">[회의실]/[사무용 책상]</span><br><br>서랍 안에는 각종 비품과 더불어 구급상자가 하나 놓여 있다.<br>열어 보면 웬만한 응급처치는 가능할 정도로 다양한 용품이 들어 있다.<br>그러나 손댄 흔적은 없다. 이 물건들이 쓸모를 다할 기회는 찾아오지 않았다.</p>
-    <button class="nav-button" onclick="goTo('office')">나가기</button>
-  </div>
-
-      <!-- 회의실 : 컴퓨터 --> 
-    <div id="computer" class="hidden">
-    <p><span style="font-weight: bold;">[회의실]/[컴퓨터]</span><br><br>컴퓨터에는 화상 통화 어플리케이션과 문서 편집 프로그램이 설치되어 있으나, 통화 어플리케이션은 작동하지 않는다.<br>인터넷이 차단되어 바깥 소식은 접할 수 없다.</p>
+    <p><span style="font-weight: bold;">[회의실]/[사무용 책상]</span><br><br>서랍 안에는 각종 비품과 더불어 구급상자가 하나 놓여 있다.<br>열어 보면 웬만한 응급처치는 가능할 정도로 다양한 용품이 들어 있다.<br>그러나 손댄 흔적도, 사라진 약품도 없다. 이 물건들이 쓸모를 다할 기회는 찾아오지 않았다.</p>
     <button class="nav-button" onclick="goTo('office')">나가기</button>
   </div>
 
@@ -1119,7 +1148,24 @@ function ev11(buttonId) {
     result.innerText = "자세히 들여다보았지만 더 생각나는 것은 없다.";
   }
 }
+function ev14(buttonId) {
+  if (currentUser.LUC >= 4) {
+    goTo('evi14');
+  } else {
+    const result = document.getElementById('evi14-result');
+    result.innerText = "안 그래도 알아보기 힘든 글씨라 내용을 더 알아내는 것은 힘들 것 같다.";
+  }
+}
+function ev15(buttonId) {
+  if (currentUser.id === "edit" || currentUser.id === "WEIHNACHT") {
+    goTo('evi14');
+  } else {
+    const result = document.getElementById('evi15-result');
+    result.innerText = "딱히 떠오르는 것은 없다...";
+  }
+}
 
+    
 //★★★★★퀴즈★★★★★
 function checkSecretCode() {
   const input = document.getElementById('secret-code-input').value;
