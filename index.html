@@ -416,13 +416,46 @@
  </div>
 
   
-    <!-- 에른 방 --> 
-    <div id="evi13" class="hidden">
-    <p><span style="font-weight: bold;">[내빈용 객실]/[에르네스토의 개인실]</span>
-    <br><br>모두에게 제공되는 것과 크게 다르지 않은 에르네스토의 방.<br>방 주인의 성격을 반영하듯 대충대충 정리된 것이 눈에 띈다. 개지도 않은 이불이라거나...<br><br>특별히 눈에 띄는 것은 없지만, 모든 객실에 비치해 두는 메모장이 보이지 않는다.</p>
+    <!-- 폴라리스 방 --> 
+    <div id="polaris" class="hidden">
+    <p><span style="font-weight: bold;">[내빈용 객실]/[폴라리스의 개인실]</span>
+    <br><br>모두에게 제공되는 것과 크게 다르지 않은 폴라리스의 방.<br>방을 둘러봐도 특별히 눈에 띄는 것은 없지만, 살펴봐서 나쁠 것은 없겠지...<br>정돈된 <span style="color: #202e70;">침대</span>가 보이고, 방 구석에는 <span style="color: #202e70;">기타 케이스</span>가 놓여 있다.</p>
+    <button onclick="goTo('bed')">침대</button><br>
+    <button onclick="goTo('guitarcase')">기타 케이스</button><br>
     <button class="nav-button" onclick="goTo('suite')">나가기</button>
   </div>
 
+      <!-- 폴라리스 방 --> 
+    <div id="bed" class="hidden">
+    <p><span style="font-weight: bold;">[내빈용 객실]/[폴라리스의 개인실]</span>
+    <br><br>푹신한 침대에 베개와 이불이 단정하게 정리되어 있다.</p>
+    <button onclick="goTo('evi10')">살펴본다</button><br>
+    <button class="nav-button" onclick="goTo('polaris')">나가기</button>
+  </div>
+
+      <!-- 폴라리스 방 --> 
+    <div id="evi10" class="hidden">
+    <p><span style="font-weight: bold;">[내빈용 객실]/[폴라리스의 개인실]</span>
+    <br><br>베개 밑에 메모지와 펜이 숨겨져 있다. 메모지는 한 장 뜯어 쓴 것 같다.</p>
+    <button class="nav-button" onclick="goTo('bed')">나가기</button>
+  </div>
+
+      <!-- 폴라리스 방 --> 
+    <div id="guitarcase" class="hidden">
+    <p><span style="font-weight: bold;">[내빈용 객실]/[폴라리스의 개인실]</span>
+    <br><br>폴라리스의 베이스 기타가 들어 있던 케이스. 비어 있다.</p>
+    <button id="guitbtn" onclick="ev11('guitbtn')">자세히 살펴본다</button><br>
+    <p id="evi11-result"></p>
+    <button class="nav-button" onclick="goTo('polaris')">나가기</button>
+  </div>
+
+        <!-- 폴라리스 방 --> 
+    <div id="evi11" class="hidden">
+    <p><span style="font-weight: bold;">[내빈용 객실]/[폴라리스의 개인실]</span>
+    <br><br>그러고 보니 안에 들어 있던 기타는 어디로 간 걸까... 적어도 현장 주변에서 발견되지는 않았다.</p>
+    <button class="nav-button" onclick="goTo('guitarcase')">나가기</button>
+  </div>
+  
     <!-- 비품실 --> 
     <div id="bipum" class="hidden">
     <p><span style="font-weight: bold;">[내빈용 객실]/[비품실]</span><br><br>생활에 필요한 각종 비품을 구비해 두는 곳.<br>휴지나 종이컵 같은 일회용품부터 각종 청소용구까지, 없는 게 없다.<br>비품실 한가운데에 커다란 <span style="color: #202e70;">도구함</span>이 뚜껑이 닫힌 채로 놓여 있다.</p>
@@ -581,93 +614,7 @@
       <p id="evi6-result"></p>
   </div>
 
-        <!-- !!메모리얼 파크:에르네스토 무덤 --> 
-    <div id="evi6" class="hidden">
-    <p><span style="font-weight: bold;">[메모리얼 파크]<br>[의문의 무덤]</span><br><br>
-    자세히 보니 신발 쪽에 풀잎 따위가 붙어 있다. 산책로에 있을 법한 잡초다.</p>
-  <button class="nav-button" onclick="goTo('memorial-ern')">나가기</button>
-  </div>
 
-      <!-- 산책로 --> 
-    <div id="street" class="hidden">
-    <p><span style="font-weight: bold;">[산책로]</span><br><br>섬 뒤쪽을 돌아볼 수 있는 해안산책로. 왕복 30분 정도 소요된다는 안내가 적혀 있다.<br>산책로 입구에는 <span style="color: #202e70;">자전거 대여소</span>와 <span style="color: #202e70;">작은 벤치</span>가 보인다.</p>
-    <button onclick="goTo('street1')">걸어서 산책하기</button><br>
-    <button onclick="goTo('street2')">자전거 대여소</button><br>
-    <button onclick="goTo('bench')">작은 벤치</button><br>
-    <button class="nav-button" onclick="goTo('outside')">나가기</button>
-  </div>
-      <!-- 산책로 --> 
-    <div id="street1" class="hidden">
-    <p><span style="font-weight: bold;">[산책로]</span><br><br>천천히 걸어서 산책하기로 했다. 산책로 주변에 피어난 풀들이 싱싱하다.</p>
-      <button id="st1" onclick="ev8('st1')">주변을 자세히 살펴본다</button><br>
-      <button onclick="goTo('street2-2')">계속 걷는다</button><br>
-      <button class="nav-button" onclick="goTo('street')">나가기</button>
-      <p id="evi8-result"></p>
-  </div>
-
-        <!-- 산책로 --> 
-      <div id="evi8" class="hidden">
-    <p><span style="font-weight: bold;">[산책로]</span><br><br>자세히 보니, 이상하게 시들시들한 들꽃들도 있다. 누군가가 물을 너무 많이 준 것 같다.</p>
-      <button class="nav-button" onclick="goTo('street1')">나가기</button>
-  </div>
-  
-      <!-- 산책로-작은 벤치 --> 
-    <div id="bench" class="hidden">
-    <p><span style="font-weight: bold;">[산책로]<br>[작은 벤치]</span><br><br>바다를 향하는 쪽으로 놓인 벤치. 앉아서 쉬기에 딱 좋은 장소다.<br>
-    수평선 끝까지 음산한 청색이 뻗어나간다. 시야를 가리는 것은 아무것도 없다는 사실이 막막하게 느껴진다.<br>
-    이렇게 육지와 동떨어진 곳에 있으니, 구조 요청 따위 할 수 있을 리 없다...</p>
-    <button onclick="goTo('evi12')">벤치 정면</button>
-    <button onclick="goTo('evi15')">벤치 등받이</button><br>
-    <button class="nav-button" onclick="goTo('street')">나가기</button>
-  </div>
-
-        <!-- 산책로-작은 벤치 --> 
-    <div id="evi12" class="hidden">
-    <p><span style="font-weight: bold;">[산책로]<br>[작은 벤치]/[정면]</span><br><br>잠시 앉아 있으니 옷이 눅눅해진 느낌이 든다. 최근에 물을 뿌리기라도 한 듯 의자에 물기가 남아 있다.</p>
-    <button class="nav-button" onclick="goTo('bench')">나가기</button>
-  </div>
-
-          <!-- 산책로-작은 벤치 --> 
-    <div id="evi15" class="hidden">
-    <p><span style="font-weight: bold;">[산책로]<br>[작은 벤치]/[등받이]</span><br><br>벤치 등받이 뒤쪽 눈에 띄지 않는 위치에 지워지다 만 핏자국이 남아 있다.</p>
-    <button class="nav-button" onclick="goTo('bench')">나가기</button>
-  </div>
-  
-      <!-- 산책로2:자전거 대여소 --> 
-    <div id="street2" class="hidden">
-    <p><span style="font-weight: bold;">[산책로]<br>[자전거 대여소]</span><br><br>1일 1회, 자전거를 대여할 수 있는 대여소.</p>
-  <button onclick="goTo('evi11')">자전거를 살펴본다</button><br>
-    <button class="nav-button" onclick="goTo('street')">나가기</button>
-  </div>
-
-        <!-- 산책로2:자전거 대여소 --> 
-    <div id="evi11" class="hidden">
-    <p><span style="font-weight: bold;">[산책로]<br>[자전거 대여소]</span><br><br>자전거 중에는 앞에 짐이나 아이를 태울 수 있게끔 작은 수레가 달린 형태도 있다.<br>자세히 보면 수레 안쪽에 약간의 물이 고여 있는 데다가, 익숙한 갈색 머리카락이 한두 가닥 붙어 있다.<br>아마도 에르네스토의 것이지만... 에르네스토 본인이 직접 작은 수레에 탈 일은 없었겠지.</p>
-    <button class="nav-button" onclick="goTo('street')">나가기</button>
-  </div>
-  
-  
-  <!-- 산책로:2-2 소원의 호수 입구 --> 
-  <div id="street2-2" class="hidden"> 
-  <p><span style="font-weight: bold;">[산책로]</span><br><br>어느새 산책로의 끝이다. 눈앞에 보이는 것은 작은 호수다.<br>이런 상황에서 소원이 무슨 의미일지는 모르겠지만...<br><br>호수 근처에 작은 <span style="color: #202e70;">메모장 </span>하나가 떨어져 있다.</p>
-  <button onclick="goTo('evi9')">메모장을 확인한다</button><br>
-  <button class="nav-button" onclick="goTo('street')">이만 돌아간다</button>
-  </div>
-
-    <!-- 산책로:2-2 소원의 호수 입구 --> 
-  <div id="evi9" class="hidden"> 
-  <p><span style="font-weight: bold;">[산책로]</span><br><br>객실에 비치된 것과 동일한 종류의 메모장이다.<br>안에 적힌 내용은 섬의 토양을 분석한 내용이다. 글씨가 무척 지저분하다.</p>
-  <button id="e9" onclick="ev10('e9')">메모장의 내용에 대해 생각해 본다</button><br>
-  <button class="nav-button" onclick="goTo('street2-2')">나가기</button>
-  <p id="evi10-result"></p>
-  </div>
-
-    <!-- 산책로:2-2 소원의 호수 입구 --> 
-  <div id="evi10" class="hidden"> 
-  <p><span style="font-weight: bold;">[산책로]</span><br><br>어떻게든 읽어 보면, 마땅한 연구 시설도 없는 것치고 상당히 전문적이라는 인상이다.<br>아마 지질학 전공인 에르네스토가 작성한 게 아닐까 하는 생각이 든다.<br>시간대별로 무언가의 수치가 측정된 걸 보면 꽤 자주 산책로에 나온 것 같다.<br><br>
-누군가 이 사실을 알았다면 쉽게 노릴 수도 있었을 것이다.</p>
-  <button class="nav-button" onclick="goTo('street2-2')">나가기</button>
-  </div>
   
 <!-- !!!!여기서부터 스크립트!!!! -->
   <script>
@@ -1024,9 +971,6 @@ function goTo(page) {
     if (['evi13'].includes(page)) {
     currentUser.evid13 = true;
   }
-    if (['nfl'].includes(page)) {
-    currentUser.evidnfl = true;
-  }
       if (['evi14'].includes(page)) {
     currentUser.evid14 = true;
   }
@@ -1167,11 +1111,11 @@ function ev8(buttonId) {
   }
 }
 
-function ev10(buttonId) {
+function ev11(buttonId) {
   if (currentUser.INT >= 4) {
-    goTo('evi10');
+    goTo('evi11');
   } else {
-    const result = document.getElementById('evi10-result');
+    const result = document.getElementById('evi11-result');
     result.innerText = "자세히 들여다보았지만 더 생각나는 것은 없다.";
   }
 }
@@ -1179,9 +1123,9 @@ function ev10(buttonId) {
 //★★★★★퀴즈★★★★★
 function checkSecretCode() {
   const input = document.getElementById('secret-code-input').value;
-  if (input === "에르네스토 프로켈") { // 원하는 정답
+  if (input === "폴라리스 래피드") { // 원하는 정답
     const codebox = document.getElementById('codebox');
-    goTo('evi13');
+    goTo('polaris');
   } else {
     const result = document.getElementById('secret-code-result');
     result.innerText = "잠겨 있는 방이다.";
