@@ -588,6 +588,7 @@
     <div id="mudae" class="hidden">
     <p><span style="font-weight: bold;">[공연장]/[무대]</span><br><br>조명이 전부 꺼져 있어 어두컴컴한 무대. 안쪽으로 시체의 모습이 보인다.</p>
     <button onclick="goTo('polasiche')">폴라리스 래피드의 시체를 확인한다</button><br>
+    <button onclick="goTo('around')">시체의 주변을 확인한다</button><br>
     <button class="nav-button" onclick="goTo('stage')">나가기</button>
   </div>
   
@@ -664,7 +665,96 @@
     신발 한쪽이 벗겨져 있다.</p>
    <button class="nav-button" onclick="goTo('polasiche')">나가기</button>
   </div>
+
+        <!-- !!시체 주변 --> 
+    <div id="around" class="hidden">
+    <p><span style="font-weight: bold;">[공연장]<br>[시체 주변]</span><br><br>
+    폴라리스는 <span style="color: #3f40d3;">스피커</span>에 기댄 상태로 앉아 있고, 주변에 <span style="color: #3f40d3;">수건</span></p>하나가 떨어져 있다.<br><span style="color: #3f40d3;">바닥</span>에도 무언가 떨어져 있는 듯하다.</p>
+       <button onclick="goTo('speaker')">스피커</button><
+    <button onclick="goTo('towel')">수건</button>
+    <button onclick="goTo('qkekr')">바닥</button><br>
+       <button class="nav-button" onclick="goTo('mudae')">나가기</button>   
+  </div>
+
+        <!-- !!주변 --> 
+    <div id="speaker" class="hidden">
+    <p><span style="font-weight: bold;">[공연장]<br>[시체 주변]</span><br><br>
+    폴라리스가 기대고 있던 스피커. 피가 약간 튀어 있는 것 외에 이상은 없다.</p>
+   <button id="mvspk" onclick="ev7('mvspk')">스피커를 움직여 본다</button><br>
+    <p id="evi7-result"></p>
+   <button class="nav-button" onclick="goTo('around')">나가기</button>
+  </div>
   
+    <div id="evi7" class="hidden">
+    <p><span style="font-weight: bold;">[공연장]<br>[시체 주변]</span><br><br>
+  스피커를 살짝 옮기자 가리고 있던 벽에 벽이나 바닥에 긁히고 패인 자국이 남아 있는 게 보인다. 새로 생긴 흔적 같다.</p>
+   <button class="nav-button" onclick="goTo('around')">나가기</button>
+  </div>
+  
+        <!-- !!주변 --> 
+    <div id="towel" class="hidden">
+    <p><span style="font-weight: bold;">[공연장]<br>[시체 주변]</span><br><br>
+    피 묻은 수건이 바닥에 떨어져 있다. 지혈하려던 걸까?</p>
+   <button class="nav-button" onclick="goTo('around')">나가기</button>
+  </div>
+
+    <!-- !!주변 --> 
+    <div id="qkekr" class="hidden">
+    <p><span style="font-weight: bold;">[공연장]<br>[시체 주변]</span><br><br>
+    바이알 약병 하나가 굴러다닌다.</p>
+     <button id="antmsdir" onclick="ev8('antmsdir')">무슨 약인지 확인한다</button><br>
+  <button id="dirqud" onclick="ev9('dirqud')">약병을 자세히 본다</button><br>
+    <p id="evi8-result"></p>
+    <p id="evi9-result"></p>
+   <button class="nav-button" onclick="goTo('around')">나가기</button>
+  </div>
+
+      <div id="evi8" class="hidden">
+    <p><span style="font-weight: bold;">[공연장]<br>[시체 주변]</span><br><br>
+  [약품명: NX-021] 시판 제품이 아니다.</p>
+   <button class="nav-button" onclick="goTo('around')">나가기</button>
+  </div>
+
+      <div id="evi9" class="hidden">
+    <p><span style="font-weight: bold;">[공연장]<br>[시체 주변]</span><br><br>
+  약병의 고무마개에는 주삿바늘 자국이 없다.</p>
+   <button class="nav-button" onclick="goTo('around')">나가기</button>
+  </div>
+
+      <!-- 도서관 --> 
+    <div id="library" class="hidden">
+    <p><span style="font-weight: bold;">[도서관]</span><br><br>장서의 종류별로 정리된 책장이 아무도 없는 숲처럼 펼쳐진다.<br>어디로 가야 할지 길을 잃어버릴 것만 같다.</p>
+    <button class="nav-button" onclick="goTo('3rdfloor')">나가기</button>
+    </div>   
+
+          <!-- 자유연구실 --> 
+    <div id="lab" class="hidden">
+    <p><span style="font-weight: bold;">[자유연구실]</span><br><br>학자와 연구자들을 위한 자유연구실.<br><span style="color: #3f40d3;">약품 보관실</span>로 향하는 문이 열려 있다.</p>
+    <button onclick="goTo('medicine')">약품 보관실</button><br>
+    <button class="nav-button" onclick="goTo('3rdfloor')">나가기</button>
+    </div>   
+
+   <!-- 약품보관실 --> 
+    <div id="medicine" class="hidden">
+    <p><span style="font-weight: bold;">[자유연구실]/[약품 보관실]</span><br><br>어려운 이름의 약품들이 잔뜩 늘어서 있는 약품 보관실이다.<br>연구실 구석에 <span style="color: #3f40d3;">쓰레기통</span>이 놓여 있다.</p>
+    <button onclick="goTo('trash')">쓰레기통을 연다</button><br>
+    <button class="nav-button" onclick="goTo('lab')">나가기</button>
+    </div>   
+
+     <!-- 쓰레기통 --> 
+    <div id="trash" class="hidden">
+    <p><span style="font-weight: bold;">[자유연구실]/[약품 보관실]</span><br><br>이미 사용된 주사기와 바이알 약병이 의료폐기물 통에 버려져 있다.</p>
+     <button id="dirqudenlwu" onclick="ev12('dirqudenlwu')">약병을 확인한다</button><br>
+    <p id="evi12-result"></p>
+    <button class="nav-button" onclick="goTo('medicine')">나가기</button>
+    </div>   
+
+      <!-- 쓰레기통 --> 
+    <div id="evi12" class="hidden">
+    <p><span style="font-weight: bold;">[자유연구실]/[약품 보관실]</span><br><br>공연장 바닥에서 굴러다니던 것과 같은 약이다.</p>
+    <button class="nav-button" onclick="goTo('medicine')">나가기</button>
+    </div>   
+      
 <!-- !!!!여기서부터 스크립트!!!! -->
   <script>
   // 애니메이션이 끝난 뒤 hover 작동 허용
@@ -1026,6 +1116,9 @@ function goTo(page) {
       if (['evi15'].includes(page)) {
     currentUser.evid15 = true;
   }
+    if (['qkekr'].includes(page)) {
+    currentUser.key = true;
+  }
     if (page === 'starting-point') {
     document.getElementById('persistent-nav').style.display = 'flex';
   }}
@@ -1125,7 +1218,7 @@ function goBack() {
 
 //여기서부터 특정 장소에서 사용하도록 되어 있는 함수!!!!
 function ev2(buttonId) {
-  if (currentUser.STR >= 4) {
+  if (currentUser.OBS >= 5) {
     goTo('evi2');
   } else {
     const result = document.getElementById('evi2-result');
@@ -1133,15 +1226,14 @@ function ev2(buttonId) {
   }
 }
 
-function ev4(buttonId) {
-  if (currentUser.POW >= 4) {
-    goTo('evi4');
+function ev5(buttonId) {
+  if (currentUser.POW >= 3) {
+    goTo('evi5');
   } else {
-    const result = document.getElementById('evi4-result');
+    const result = document.getElementById('evi5-result');
     result.innerText = "자세히 보기에는 지나치게 참혹한 모습이다.";
   }
 }
-
 function ev6(buttonId) {
   if (currentUser.OBS >= 4) {
     goTo('evi6');
@@ -1150,13 +1242,28 @@ function ev6(buttonId) {
     result.innerText = "자세히 살펴봤지만 눈에 띄는 것은 없다.";
   }
 }
-
+function ev7(buttonId) {
+  if (currentUser.STR >= 3) {
+    goTo('evi7');
+  } else {
+    const result = document.getElementById('evi7-result');
+    result.innerText = "스피커는 꽤 무겁다. 마음대로 움직일 수 없을 것 같다.";
+  }
+}
 function ev8(buttonId) {
-  if (currentUser.LUC >= 3 || currentUser.id === "WEIHNACHT") {
+  if (currentUser.INT >= 5) {
     goTo('evi8');
   } else {
     const result = document.getElementById('evi8-result');
-    result.innerText = "눈에 띄는 것은 없다.";
+    result.innerText = "무슨 약인지 짐작조차 가지 않는다.";
+  }
+}
+function ev9(buttonId) {
+  if (currentUser.OBS >= 5) {
+    goTo('evi9');
+  } else {
+    const result = document.getElementById('evi9-result');
+    result.innerText = "자세히 확인했지만 짚이는 것이 없다.";
   }
 }
 
@@ -1166,6 +1273,14 @@ function ev11(buttonId) {
   } else {
     const result = document.getElementById('evi11-result');
     result.innerText = "자세히 들여다보았지만 더 생각나는 것은 없다.";
+  }
+}
+function ev12(buttonId) {
+  if (currentUser.key = true) {
+    goTo('evi12');
+  } else {
+    const result = document.getElementById('evi12-result');
+    result.innerText = "본 기억이 없는 약이다.";
   }
 }
 function ev14(buttonId) {
@@ -1178,7 +1293,7 @@ function ev14(buttonId) {
 }
 function ev15(buttonId) {
   if (currentUser.id === "edit" || currentUser.id === "WEIHNACHT") {
-    goTo('evi14');
+    goTo('evi15');
   } else {
     const result = document.getElementById('evi15-result');
     result.innerText = "딱히 떠오르는 것은 없다...";
