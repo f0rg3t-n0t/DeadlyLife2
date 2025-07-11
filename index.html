@@ -317,7 +317,7 @@
   <div id="inside" class="hidden">
     <p><span style="font-weight: bold;">[건물 1층]</span><br><br>건물 1층.<br>정면에 방문객을 맞이하는 <span style="color: #202e70;">로비</span>가 보이고, 로비 뒤편에는 유리로 된 <span style="color: #202e70;">엘리베이터</span>가 배치되어 있다.</p>
     <button onclick="goTo('lobby')">로비</button>
-    <button onclick="goTo('elevator')">엘리베이터</button>
+    <button onclick="goTo('elevator')">엘리베이터</button><br>
     <button class="nav-button" onclick="goTo('starting-point')">건물 입구로 돌아가기</button>
   </div>
 
@@ -421,8 +421,9 @@
       <!-- 로비:엘리베이터:탑승 --> 
     <div id="elevator1" class="hidden">
     <p><span style="font-weight: bold;">[엘리베이터]</span><br><br>원하는 층으로 이동할 수 있다.<br>3층 이상부터는 정비 중인지, 버튼을 눌러도 불이 들어오지 않는다.</p>
-    <button onclick="goToWithSound('inside','zzapelevator.mp3')">1층</button><br>
-    <button onclick="goToWithSound('2ndfloor','zzapelevator.mp3')">2층</button><br>
+    <button onclick="goToWithSound('3rdfloor','zzapelevator.mp3')">3층</button><br>
+      <button onclick="goToWithSound('2ndfloor','zzapelevator.mp3')">2층</button><br>
+        <button onclick="goToWithSound('inside','zzapelevator.mp3')">1층</button><br>
  </div>     
 
 
@@ -495,20 +496,20 @@
     <!-- 비품실 --> 
     <div id="bipum" class="hidden">
     <p><span style="font-weight: bold;">[내빈용 객실]/[비품실]</span><br><br>생활에 필요한 각종 비품을 구비해 두는 곳.<br>휴지나 종이컵 같은 일회용품부터 각종 청소용구까지, 없는 게 없다.<br>비품실 한가운데에 커다란 <span style="color: #202e70;">도구함</span>이 뚜껑이 닫힌 채로 놓여 있다.</p>
-    <button onclick="goTo('evi14')">도구함을 연다</button><br>
+    <button onclick="goTo('ehrngka')">도구함을 연다</button><br>
     <button class="nav-button" onclick="goTo('suite')">나가기</button>
   </div>
   
       <!-- 비품실 : 도구함 --> 
-    <div id="evi14" class="hidden">
-    <p><span style="font-weight: bold;">[내빈용 객실]/[비품실]</span><br><br>도구함의 뚜껑을 들어올리면, 그 안에는 톱, 전동 가위, 도끼 같은 물건들이 가지런히 들어 있다.<br><br>무언가 사라진 것 같지는 않다. 아무도 건드리지 않은 모양이다. 그렇다면 렌치는 어디서 가져온 걸까...</p>
+    <div id="ehrngka" class="hidden">
+    <p><span style="font-weight: bold;">[내빈용 객실]/[비품실]</span><br><br>도구함의 뚜껑을 들어올리면, 그 안에는 톱, 전동 가위, 도끼 같은 물건들이 가지런히 들어 있다.<br><br>무언가 사라진 것 같지는 않다. 아무도 건드리지 않은 모양이다. 그렇다면 흉기는 어디서 가져온 걸까...</p>
     <button class="nav-button" onclick="goTo('bipum')">나가기</button>
   </div>
   
     <!-- 회의실 --> 
     <div id="office" class="hidden">
     <p><span style="font-weight: bold;">[회의실]</span><br><br>세미나 등을 진행할 수 있는 회의실. 사무실의 역할도 겸하고 있다. 사무용 책상과 그 위의 <span style="color: #202e70;">컴퓨터</span>가 눈에 띈다.</p>
-    <button onclick="goTo('pcdesk')">사무용 책상</button>
+    <button onclick="goTo('pcdesk')">사무용 책상</button><br>
     <button class="nav-button" onclick="goTo('2ndfloor')">나가기</button>
   </div>
 
@@ -1288,7 +1289,7 @@ function ev14(buttonId) {
     goTo('evi14');
   } else {
     const result = document.getElementById('evi14-result');
-    result.innerText = "안 그래도 알아보기 힘든 글씨라 내용을 더 알아내는 것은 힘들 것 같다.";
+    result.innerText = "워낙 알아보기 힘든 글씨인 탓에 내용을 더 알아내는 것은 힘들 것 같다.";
   }
 }
 function ev15(buttonId) {
